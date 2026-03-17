@@ -269,9 +269,13 @@ a {
 
 .page-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   align-items: flex-start;
+}
+
+.page-content.two-col {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
 }
 
 .note-card {
