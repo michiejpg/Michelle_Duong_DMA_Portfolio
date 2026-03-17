@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coding things | michelle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-area">
+        <span class="logo-mark">MD</span>
+        <span class="logo-text">michelle's art corner</span>
+      </div>
+      <nav class="main-nav">
+        <a href="glitch-images.html">Glitch Images</a>
+        <a href="coding.html">Coding</a>
+        <a href="digital-video.html">Digital Video</a>
+        <a href="digital-illustration.html">Digital Illustration</a>
+        <a href="about.html">About the Artist</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <header class="page-header">
+        <h1 class="page-title">little coding things</h1>
+        <p class="page-subtitle">
+          Web experiments, interactive sketches, and small tools built with code.
+        </p>
+      </header>
+
+      <section class="page-content">
+        <div class="note-card">
+          <p>
+            <strong>this is for your nerdy side.</strong> list tiny projects,
+            experiments, and half-finished ideas you still love.
+          </p>
+          <p>
+            you can add cards or buttons later that link to live sites, sketches,
+            or github repos once you’re ready to share them.
+          </p>
+        </div>
+        <div class="placeholder-grid">
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Project idea</div>
+            A pastel themed interactive glitch canvas that reacts to the mouse.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Technologies</div>
+            HTML, CSS, JavaScript, p5.js, or Three.js.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Notes</div>
+            Keep the UI minimal so the artwork stays center stage.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Link space</div>
+            Add buttons here later that link to GitHub repositories or live demos.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Michelle Duong · Digital Media Art</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
