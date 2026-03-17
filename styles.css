@@ -293,6 +293,23 @@ a {
   gap: 0.9rem;
 }
 
+.glitch-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.glitch-gallery .placeholder-tile {
+  padding: 0.75rem;
+}
+
+.glitch-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+
 .placeholder-tile {
   border-radius: 16px;
   padding: 1.1rem 1rem;
@@ -336,6 +353,10 @@ a {
   }
 
   .page-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .glitch-gallery {
     grid-template-columns: minmax(0, 1fr);
   }
 }
