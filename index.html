@@ -268,7 +268,7 @@
 
       .hero-title {
         margin-top: 1.2rem;
-        font-size: clamp(2.1rem, 4vw, 2.9rem);
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
         line-height: 1.08;
         letter-spacing: 0.03em;
         color: var(--blueberry-dark);
@@ -283,65 +283,10 @@
       }
 
       .hero-subtitle {
-        margin-top: 0.85rem;
-        font-size: 0.94rem;
-        max-width: 32rem;
+        margin-top: 0.6rem;
+        font-size: 0.9rem;
+        max-width: 26rem;
         color: rgba(18, 19, 33, 0.7);
-      }
-
-      .hero-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.6rem;
-      }
-
-      .hero-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        padding: 0.6rem 1.1rem;
-        border-radius: 999px;
-        border: 1px solid rgba(65, 84, 179, 0.3);
-        background: rgba(255, 255, 255, 0.92);
-        font-size: 0.8rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        color: var(--blueberry-dark);
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
-          background 0.2s ease;
-      }
-
-      .hero-button:hover {
-        transform: translateY(-1px);
-        border-color: rgba(65, 84, 179, 0.7);
-        box-shadow: 0 10px 22px rgba(16, 23, 86, 0.16);
-      }
-
-      .hero-button.primary {
-        background: radial-gradient(circle at 10% 0, var(--lemon), var(--blueberry-light));
-        border-color: rgba(255, 227, 106, 0.9);
-      }
-
-      .hero-button-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        background: var(--blueberry-dark);
-      }
-
-      .hero-note {
-        margin-top: 1rem;
-        font-size: 0.78rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: rgba(18, 19, 33, 0.58);
-      }
-
-      .hero-note span {
-        color: var(--blueberry);
       }
 
       .hero-art {
@@ -585,23 +530,14 @@
       }
 
       .section-heading {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
       }
 
       .section-title {
-        font-size: 1rem;
-        letter-spacing: 0.14em;
+        font-size: 0.95rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--blueberry-dark);
-      }
-
-      .section-tagline {
-        font-size: 0.8rem;
-        color: rgba(18, 19, 33, 0.6);
       }
 
       .grid {
@@ -647,37 +583,12 @@
         font-size: 0.7rem;
         text-transform: uppercase;
         letter-spacing: 0.14em;
-        color: rgba(18, 19, 33, 0.65);
+        color: rgba(18, 19, 33, 0.55);
       }
 
       .card-title {
-        font-size: 0.96rem;
+        font-size: 0.9rem;
         color: var(--blueberry-dark);
-      }
-
-      .card-meta {
-        margin-top: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.72rem;
-        color: rgba(18, 19, 33, 0.6);
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.25rem;
-        padding: 0.16rem 0.55rem;
-        border-radius: 999px;
-        background: rgba(169, 181, 255, 0.24);
-      }
-
-      .pill-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 999px;
-        background: var(--blueberry);
       }
 
       /* About */
@@ -856,33 +767,12 @@
     <main class="page-shell" id="top">
       <section class="hero" aria-labelledby="intro-title">
         <div>
-          <div class="hero-tag">
-            <span class="hero-tag-dot"></span>
-            <span>Blueberry lemonade portfolio</span>
-          </div>
           <h1 class="hero-title" id="intro-title">
-            Digital Media with a
-            <span class="highlight">Blueberry Lemonade</span>
-            Twist
+            Michelle Duong
+            <span class="highlight">Portfolio</span>
           </h1>
           <p class="hero-subtitle">
-            A curated collection of glitch imagery, interactive code, digital video, and
-            illustration by Michelle Duong – poured over ice, sweetened with color, and
-            finished with a hint of glitch.
-          </p>
-
-          <div class="hero-buttons">
-            <a class="hero-button primary" href="#glitch-images">
-              <span class="hero-button-dot"></span>
-              <span>View Selected Works</span>
-            </a>
-            <a class="hero-button" href="#about">
-              <span>Meet the Artist</span>
-            </a>
-          </div>
-
-          <p class="hero-note">
-            Now showcasing: <span>Glitch Images, Coding, Digital Video, Digital Illustration</span>
+            Blueberry lemonade colors. Glitchy, soft, and a little bit sparkly.
           </p>
         </div>
 
@@ -930,37 +820,15 @@
       <section id="glitch-images">
         <div class="section-heading">
           <h2 class="section-title">Glitch Images</h2>
-          <p class="section-tagline">
-            Still frames where pixels fracture, melt, and bloom like citrus in deep blue.
-          </p>
         </div>
         <div class="grid">
           <article class="card">
-            <div class="card-label">Featured Piece</div>
-            <h3 class="card-title">[Glitch piece title]</h3>
-            <p>
-              Short description of your glitch artwork – how it was created, what tools you
-              used, and the vibe you were going for.
-            </p>
-            <div class="card-meta">
-              <span class="pill">
-                <span class="pill-dot"></span>
-                <span>Glitch · JPEG/PNG</span>
-              </span>
-              <span>Year</span>
-            </div>
+            <div class="card-label">Glitch</div>
+            <h3 class="card-title">[Glitch piece 01]</h3>
           </article>
           <article class="card">
-            <div class="card-label">Glitch Series</div>
-            <h3 class="card-title">[Series or experiment]</h3>
-            <p>
-              Use this card to link to a gallery or folder with more glitch images in the
-              same series.
-            </p>
-            <div class="card-meta">
-              <span>Multiple works</span>
-              <span>Link or gallery soon</span>
-            </div>
+            <div class="card-label">Glitch</div>
+            <h3 class="card-title">[Glitch piece 02]</h3>
           </article>
         </div>
       </section>
@@ -968,39 +836,15 @@
       <section id="coding">
         <div class="section-heading">
           <h2 class="section-title">Coding</h2>
-          <p class="section-tagline">
-            Interactive pieces, creative coding experiments, and projects where code drives
-            the visuals.
-          </p>
         </div>
         <div class="grid">
           <article class="card">
-            <div class="card-label">Creative Code</div>
-            <h3 class="card-title">[Project name]</h3>
-            <p>
-              Describe a coding project – what it does, what technologies you used
-              (Processing, p5.js, JavaScript, etc.), and what makes it visually or
-              conceptually interesting.
-            </p>
-            <div class="card-meta">
-              <span class="pill">
-                <span class="pill-dot"></span>
-                <span>HTML/CSS/JS</span>
-              </span>
-              <span>View code / demo</span>
-            </div>
+            <div class="card-label">Project</div>
+            <h3 class="card-title">[Coding project 01]</h3>
           </article>
           <article class="card">
-            <div class="card-label">Technical</div>
-            <h3 class="card-title">[Portfolio / repo link]</h3>
-            <p>
-              Use this space to link out to your GitHub, coding portfolio, or other places
-              where your code lives.
-            </p>
-            <div class="card-meta">
-              <span>External link</span>
-              <span>GitHub / etc.</span>
-            </div>
+            <div class="card-label">Project</div>
+            <h3 class="card-title">[Coding project 02]</h3>
           </article>
         </div>
       </section>
@@ -1008,38 +852,15 @@
       <section id="digital-video">
         <div class="section-heading">
           <h2 class="section-title">Digital Video</h2>
-          <p class="section-tagline">
-            Motion-based work – edits, experimental video, and moving images with a citrusy
-            glitch.
-          </p>
         </div>
         <div class="grid">
           <article class="card">
-            <div class="card-label">Video Project</div>
-            <h3 class="card-title">[Video title]</h3>
-            <p>
-              Describe the concept, editing style, and tools used (Premiere, After Effects,
-              etc.). You can embed a video or link to Vimeo/YouTube later.
-            </p>
-            <div class="card-meta">
-              <span class="pill">
-                <span class="pill-dot"></span>
-                <span>Digital Video</span>
-              </span>
-              <span>Duration · Year</span>
-            </div>
+            <div class="card-label">Video</div>
+            <h3 class="card-title">[Video project 01]</h3>
           </article>
           <article class="card">
-            <div class="card-label">Reel or Compilation</div>
-            <h3 class="card-title">[Reel / montage]</h3>
-            <p>
-              Space for your overall reel or a compilation video that highlights multiple
-              projects.
-            </p>
-            <div class="card-meta">
-              <span>Link coming soon</span>
-              <span>Vimeo / YouTube</span>
-            </div>
+            <div class="card-label">Video</div>
+            <h3 class="card-title">[Video project 02]</h3>
           </article>
         </div>
       </section>
@@ -1047,38 +868,15 @@
       <section id="digital-illustration">
         <div class="section-heading">
           <h2 class="section-title">Digital Illustration</h2>
-          <p class="section-tagline">
-            Illustration work where blueberries, lemons, and glitch aesthetics influence the
-            palette and mood.
-          </p>
         </div>
         <div class="grid">
           <article class="card">
-            <div class="card-label">Key Illustration</div>
-            <h3 class="card-title">[Illustration title]</h3>
-            <p>
-              Describe your illustration – medium, tools (Procreate, Photoshop, Illustrator),
-              and how it fits into your larger body of work.
-            </p>
-            <div class="card-meta">
-              <span class="pill">
-                <span class="pill-dot"></span>
-                <span>Digital Illustration</span>
-              </span>
-              <span>Year</span>
-            </div>
+            <div class="card-label">Illustration</div>
+            <h3 class="card-title">[Illustration 01]</h3>
           </article>
           <article class="card">
-            <div class="card-label">Series / Collection</div>
-            <h3 class="card-title">[Mini series]</h3>
-            <p>
-              Use this card to highlight a cohesive set of illustrations – for example, a
-              character series or visual narrative.
-            </p>
-            <div class="card-meta">
-              <span>Multiple works</span>
-              <span>Gallery link soon</span>
-            </div>
+            <div class="card-label">Illustration</div>
+            <h3 class="card-title">[Illustration 02]</h3>
           </article>
         </div>
       </section>
@@ -1086,22 +884,12 @@
       <section id="about">
         <div class="section-heading">
           <h2 class="section-title">About the Artist</h2>
-          <p class="section-tagline">
-            A quick pour of who you are, what you make, and where you’re headed.
-          </p>
         </div>
 
         <div class="about-wrapper">
           <div class="about-text">
             <p>
-              Write a short artist statement here. Introduce who you are, what you study or
-              practice, and what themes you explore in your work. Mention why you’re drawn to
-              glitch aesthetics, digital media, or the blueberry lemonade color palette.
-            </p>
-            <p>
-              You can also talk about your process, tools, or influences – from software and
-              game art to film, illustration, or design. Keep it honest and in your own
-              voice.
+              Hi, I’m Michelle. I like glitchy pixels, soft colors, and mixing code with art.
             </p>
           </div>
 
