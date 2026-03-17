@@ -226,6 +226,33 @@ a {
   margin-bottom: 1.75rem;
 }
 
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: var(--yellow-soft);
+  border: 1px dashed rgba(255, 210, 140, 0.9);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.back-home span {
+  font-size: 0.9rem;
+}
+
+.back-home:hover,
+.back-home:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(180, 160, 120, 0.28);
+}
+
 .page-title {
   margin: 0 0 0.35rem;
   font-size: 1.8rem;
