@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glitch Images | Michelle Duong</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-area">
+        <span class="logo-mark">MD</span>
+        <span class="logo-text">Digital Media Art</span>
+      </div>
+      <nav class="main-nav">
+        <a href="glitch-images.html">Glitch Images</a>
+        <a href="coding.html">Coding</a>
+        <a href="digital-video.html">Digital Video</a>
+        <a href="digital-illustration.html">Digital Illustration</a>
+        <a href="about.html">About the Artist</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <header class="page-header">
+        <h1 class="page-title">Glitch Images</h1>
+        <p class="page-subtitle">
+          Dreamy distortions, pixel experiments, and broken screenshots collected
+          from different projects.
+        </p>
+      </header>
+
+      <section class="page-content">
+        <div class="note-card">
+          <p>
+            <strong>Add your own work here.</strong> You can drop in
+            screenshots or exported glitch pieces as images once you are ready.
+          </p>
+          <p>
+            Replace the pastel boxes on the right with
+            `<img>` tags for each piece, or link out to larger versions.
+          </p>
+        </div>
+        <div class="placeholder-grid">
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Series</div>
+            Soft glitch portraits, color channel shifts, and pixel stretching.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Idea</div>
+            Embrace broken screenshots and “wrong” renderings as finished work.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Tools</div>
+            Mix Photoshop, code-based glitching, and happy accidents.
+          </div>
+          <div class="placeholder-tile">
+            <div class="placeholder-label">Notes</div>
+            Keep the palette soft: pastel blues, yellows, and gentle gradients.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Michelle Duong · Digital Media Art</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
