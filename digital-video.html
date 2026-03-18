@@ -28,13 +28,65 @@
       </header>
 
       <section class="page-content">
-        <div class="placeholder-grid">
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
+        <div class="video-grid">
+          <button
+            class="video-card"
+            data-video-src="videos/runningoutoftime.mp4"
+            aria-label="play running out of time video"
+          >
+            <div class="video-thumb">
+              <video src="videos/runningoutoftime.mp4" muted></video>
+            </div>
+            <div class="video-label">running out of time</div>
+          </button>
+
+          <button
+            class="video-card"
+            data-video-src="videos/visions.mp4"
+            aria-label="play visions video"
+          >
+            <div class="video-thumb">
+              <video src="videos/visions.mp4" muted></video>
+            </div>
+            <div class="video-label">visions</div>
+          </button>
+
+          <button
+            class="video-card"
+            data-video-src="videos/vanity.mp4"
+            aria-label="play vanity video"
+          >
+            <div class="video-thumb">
+              <video src="videos/vanity.mp4" muted></video>
+            </div>
+            <div class="video-label">vanity</div>
+          </button>
+
+          <button
+            class="video-card"
+            data-video-src="videos/creep.mp4"
+            aria-label="play creep video"
+          >
+            <div class="video-thumb">
+              <video src="videos/creep.mp4" muted></video>
+            </div>
+            <div class="video-label">creep</div>
+          </button>
         </div>
       </section>
+
+      <div class="video-modal" id="video-modal" aria-hidden="true">
+        <div class="video-modal-inner">
+          <button
+            class="video-modal-close"
+            type="button"
+            aria-label="close video"
+          >
+            ✕
+          </button>
+          <video id="video-modal-player" controls></video>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -42,6 +94,39 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        const modal = document.getElementById("video-modal");
+        const player = document.getElementById("video-modal-player");
+        const closeBtn = modal.querySelector(".video-modal-close");
+
+        function openModal(src) {
+          player.src = src;
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          player.play();
+        }
+
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          player.pause();
+          player.currentTime = 0;
+          player.removeAttribute("src");
+        }
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            const src = card.getAttribute("data-video-src");
+            if (src) openModal(src);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+      })();
     </script>
   </body>
 </html>
