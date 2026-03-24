@@ -8,30 +8,37 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="logo-area">
-        <span class="logo-mark">MD</span>
-        <span class="logo-text">michelle's art corner</span>
-      </div>
-      <nav class="main-nav">
-        <a href="coding.html">Coding</a>
-        <a href="digital-video.html">Digital Video</a>
-        <a href="digital-illustration.html">Digital Illustration</a>
-        <a href="about.html">About the Artist</a>
+      <a href="index.html" class="logo-link" aria-label="home">
+        <div class="logo-area">
+          <span class="logo-mark">MD</span>
+          <span class="logo-text">michelle's art corner</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="site sections">
+        <a href="index.html#coding">Coding</a>
+        <a href="index.html#digital-video">Digital Video</a>
+        <a href="index.html#digital-illustration">Digital Illustration</a>
+        <a href="index.html#about">About the Artist</a>
       </nav>
     </header>
 
     <main class="page">
       <header class="page-header">
         <h1 class="page-title">a bit about me</h1>
-        <a class="back-home" href="index.html"><span>←</span>back home</a>
+        <a class="back-home" href="index.html#about"
+          ><span>←</span>full portfolio</a
+        >
       </header>
 
-      <section class="page-content">
-        <div class="placeholder-grid">
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
-          <div class="placeholder-tile"></div>
+      <section class="page-content about-home">
+        <figure class="about-photo">
+          <img src="images/michie.JPG" alt="Michelle Duong" />
+        </figure>
+        <div class="note-card about-copy">
+          <p>
+            Michelle Duong — digital media artist. Add your bio, statement, or
+            contact details here.
+          </p>
         </div>
       </section>
     </main>
@@ -44,4 +51,3 @@
     </script>
   </body>
 </html>
-
