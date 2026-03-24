@@ -195,6 +195,68 @@ a {
     background 0.16s ease-out;
 }
 
+.card-has-preview {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-has-preview h2 {
+  margin: 0;
+  padding: 1rem 1.3rem 1.35rem;
+}
+
+.card-preview {
+  width: 100%;
+  min-height: 7.5rem;
+  background: rgba(230, 236, 248, 0.5);
+}
+
+.card-preview img,
+.card-preview video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  aspect-ratio: 21 / 9;
+  min-height: 0;
+}
+
+.card-preview-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  aspect-ratio: 16 / 9;
+}
+
+.card-preview-solo {
+  aspect-ratio: 21 / 9;
+  max-height: 12rem;
+}
+
+.card-preview-solo img {
+  object-position: center 20%;
+}
+
+.card-preview-video-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
+.card-preview-video-cell {
+  min-height: 0;
+  overflow: hidden;
+  background: #1a1f2a;
+}
+
 .card:hover,
 .card:focus {
   transform: translateY(-2px) rotate(-1.2deg);
@@ -295,23 +357,6 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.9rem;
-}
-
-.glitch-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.glitch-gallery .placeholder-tile {
-  padding: 0.75rem;
-}
-
-.glitch-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 14px;
 }
 
 .coding-gallery {
@@ -498,10 +543,6 @@ a {
   }
 
   .page-content {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .glitch-gallery {
     grid-template-columns: minmax(0, 1fr);
   }
 
