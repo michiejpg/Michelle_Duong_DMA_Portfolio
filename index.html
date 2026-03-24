@@ -8,76 +8,175 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="logo-area">
-        <span class="logo-mark">MD</span>
-        <span class="logo-text">michelle's art corner</span>
-      </div>
-      <nav class="main-nav">
-        <a href="coding.html">Coding</a>
-        <a href="digital-video.html">Digital Video</a>
-        <a href="digital-illustration.html">Digital Illustration</a>
-        <a href="about.html">About the Artist</a>
+      <a href="index.html" class="logo-link" aria-label="home">
+        <div class="logo-area">
+          <span class="logo-mark">MD</span>
+          <span class="logo-text">michelle's art corner</span>
+        </div>
+      </a>
+      <nav class="main-nav" aria-label="site sections">
+        <a href="#coding">Coding</a>
+        <a href="#digital-video">Digital Video</a>
+        <a href="#digital-illustration">Digital Illustration</a>
+        <a href="#about">About the Artist</a>
       </nav>
     </header>
 
-    <main class="page page-home">
-      <section class="hero">
+    <main class="page page-home" id="top">
+      <section class="hero" aria-label="intro">
         <h1 class="hero-title">michelle's art corner</h1>
+        <p class="hero-subtitle">
+          Scroll down for coding projects, video, illustration, and about.
+        </p>
       </section>
 
-      <section class="grid">
-        <a href="coding.html" class="card card-has-preview">
-          <div class="card-preview card-preview-grid" aria-hidden="true">
-            <img
-              src="images/netart copy.jpg"
-              alt=""
-            />
-            <img
-              src="images/edmdressup copy.jpg"
-              alt=""
-            />
-            <img src="images/systemerror.png" alt="" />
-          </div>
-          <h2>Coding</h2>
-        </a>
-        <a href="digital-video.html" class="card card-has-preview">
-          <div class="card-preview card-preview-video-row" aria-hidden="true">
-            <div class="card-preview-video-cell">
-              <video
-                src="videos/vanity.mp4"
-                muted
-                playsinline
-                preload="metadata"
-              ></video>
+      <section id="coding" class="home-section" aria-labelledby="heading-coding">
+        <header class="home-section-header">
+          <h2 id="heading-coding" class="home-section-title">Coding</h2>
+          <p class="home-section-lead">
+            Interactive web projects — click a link to open each piece in a new
+            tab.
+          </p>
+        </header>
+        <div class="page-content">
+          <div class="coding-gallery">
+            <div class="coding-card">
+              <img src="images/netart copy.jpg" alt="netart project image" />
+              <div class="coding-links">
+                <a
+                  href="https://michiejpg.github.io/wheresmaya/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Where's Maya?</a
+                >
+              </div>
             </div>
-            <div class="card-preview-video-cell">
-              <video
-                src="videos/creep.mp4"
-                muted
-                playsinline
-                preload="metadata"
-              ></video>
+
+            <div class="coding-card">
+              <img
+                src="images/edmdressup copy.jpg"
+                alt="edm dress up project image"
+              />
+              <div class="coding-links">
+                <a
+                  href="https://michiejpg.github.io/edmdressup/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >EDM Dress Up</a
+                >
+              </div>
+            </div>
+
+            <div class="coding-card">
+              <img src="images/systemerror.png" alt="system error project image" />
+              <div class="coding-links">
+                <a
+                  href="https://michiejpg.github.io/SYSTEM_ERROR/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >SYSTEM // ERROR</a
+                >
+              </div>
             </div>
           </div>
-          <h2>Digital Video</h2>
-        </a>
-        <a href="digital-illustration.html" class="card card-has-preview">
-          <div class="card-preview card-preview-grid card-preview-grid-2" aria-hidden="true">
-            <img
-              src="images/digitalpainting copy.jpg"
-              alt=""
-            />
-            <img src="images/MEIHUA.JPG" alt="" />
-          </div>
-          <h2>Digital Illustration</h2>
-        </a>
-        <a href="about.html" class="card card-has-preview card-wide">
-          <div class="card-preview card-preview-solo" aria-hidden="true">
-            <img src="images/michie.JPG" alt="" />
-          </div>
-          <h2>About the Artist</h2>
-        </a>
+        </div>
       </section>
+
+      <section
+        id="digital-video"
+        class="home-section"
+        aria-labelledby="heading-digital-video"
+      >
+        <header class="home-section-header">
+          <h2 id="heading-digital-video" class="home-section-title">
+            Digital Video
+          </h2>
+          <p class="home-section-lead">
+            Click a piece to play it full size with sound.
+          </p>
+        </header>
+        <div class="page-content">
+          <div class="video-grid">
+            <button
+              class="video-card"
+              data-video-src="videos/vanity.mp4"
+              aria-label="play vanity video"
+            >
+              <div class="video-thumb">
+                <video src="videos/vanity.mp4" muted></video>
+              </div>
+              <div class="video-label">vanity</div>
+            </button>
+
+            <button
+              class="video-card"
+              data-video-src="videos/creep.mp4"
+              aria-label="play creep video"
+            >
+              <div class="video-thumb">
+                <video src="videos/creep.mp4" muted></video>
+              </div>
+              <div class="video-label">creep</div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="digital-illustration"
+        class="home-section"
+        aria-labelledby="heading-digital-illustration"
+      >
+        <header class="home-section-header">
+          <h2 id="heading-digital-illustration" class="home-section-title">
+            Digital Illustration
+          </h2>
+          <p class="home-section-lead">Digital paintings and character work.</p>
+        </header>
+        <div class="page-content">
+          <div class="illustration-gallery">
+            <figure class="illustration-piece">
+              <img
+                src="images/digitalpainting copy.jpg"
+                alt="digital painting illustration"
+              />
+            </figure>
+            <figure class="illustration-piece">
+              <img src="images/MEIHUA.JPG" alt="meihua illustration" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="home-section" aria-labelledby="heading-about">
+        <header class="home-section-header">
+          <h2 id="heading-about" class="home-section-title">About the Artist</h2>
+        </header>
+        <div class="page-content about-home">
+          <figure class="about-photo">
+            <img src="images/michie.JPG" alt="Michelle Duong" />
+          </figure>
+          <div class="note-card about-copy">
+            <p>
+              Michelle Duong — digital media artist. Add your bio, statement,
+              or contact details here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="video-modal" id="video-modal" aria-hidden="true">
+        <div class="video-modal-inner">
+          <button
+            class="video-modal-close"
+            type="button"
+            aria-label="close video"
+          >
+            ✕
+          </button>
+          <video id="video-modal-player" controls></video>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -86,7 +185,39 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        const modal = document.getElementById("video-modal");
+        const player = document.getElementById("video-modal-player");
+        const closeBtn = modal.querySelector(".video-modal-close");
+
+        function openModal(src) {
+          player.src = src;
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          player.play();
+        }
+
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          player.pause();
+          player.currentTime = 0;
+          player.removeAttribute("src");
+        }
+
+        document.querySelectorAll(".video-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            const src = card.getAttribute("data-video-src");
+            if (src) openModal(src);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+      })();
     </script>
   </body>
 </html>
-
