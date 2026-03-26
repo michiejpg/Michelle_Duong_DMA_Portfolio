@@ -183,6 +183,19 @@
           <video id="video-modal-player" controls></video>
         </div>
       </div>
+
+      <div class="image-modal" id="image-modal" aria-hidden="true">
+        <div class="image-modal-inner">
+          <button
+            class="image-modal-close"
+            type="button"
+            aria-label="close image"
+          >
+            ✕
+          </button>
+          <img id="image-modal-viewer" alt="" />
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -196,6 +209,9 @@
         const modal = document.getElementById("video-modal");
         const player = document.getElementById("video-modal-player");
         const closeBtn = modal.querySelector(".video-modal-close");
+        const imageModal = document.getElementById("image-modal");
+        const imageViewer = document.getElementById("image-modal-viewer");
+        const imageCloseBtn = imageModal.querySelector(".image-modal-close");
 
         function openModal(src) {
           player.src = src;
@@ -212,6 +228,20 @@
           player.removeAttribute("src");
         }
 
+        function openImageModal(src, altText) {
+          imageViewer.src = src;
+          imageViewer.alt = altText || "";
+          imageModal.classList.add("is-open");
+          imageModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeImageModal() {
+          imageModal.classList.remove("is-open");
+          imageModal.setAttribute("aria-hidden", "true");
+          imageViewer.removeAttribute("src");
+          imageViewer.alt = "";
+        }
+
         document.querySelectorAll(".video-card").forEach((card) => {
           card.addEventListener("click", () => {
             const src = card.getAttribute("data-video-src");
@@ -222,6 +252,21 @@
         closeBtn.addEventListener("click", closeModal);
         modal.addEventListener("click", (e) => {
           if (e.target === modal) closeModal();
+        });
+
+        document.querySelectorAll(".illustration-piece img").forEach((img) => {
+          img.addEventListener("click", () => openImageModal(img.src, img.alt));
+        });
+
+        imageCloseBtn.addEventListener("click", closeImageModal);
+        imageModal.addEventListener("click", (e) => {
+          if (e.target === imageModal) closeImageModal();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            if (modal.classList.contains("is-open")) closeModal();
+            if (imageModal.classList.contains("is-open")) closeImageModal();
+          }
         });
       })();
     </script>
