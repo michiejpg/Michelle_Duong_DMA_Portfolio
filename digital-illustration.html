@@ -49,6 +49,19 @@
           </figure>
         </div>
       </section>
+
+      <div class="image-modal" id="image-modal" aria-hidden="true">
+        <div class="image-modal-inner">
+          <button
+            class="image-modal-close"
+            type="button"
+            aria-label="close image"
+          >
+            ✕
+          </button>
+          <img id="image-modal-viewer" alt="" />
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
@@ -56,6 +69,40 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        const modal = document.getElementById("image-modal");
+        const viewer = document.getElementById("image-modal-viewer");
+        const closeBtn = modal.querySelector(".image-modal-close");
+
+        function openModal(src, altText) {
+          viewer.src = src;
+          viewer.alt = altText || "";
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeModal() {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+          viewer.removeAttribute("src");
+          viewer.alt = "";
+        }
+
+        document.querySelectorAll(".illustration-piece img").forEach((img) => {
+          img.addEventListener("click", () => openModal(img.src, img.alt));
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("is-open")) {
+            closeModal();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
