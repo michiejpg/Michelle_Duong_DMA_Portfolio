@@ -118,6 +118,27 @@
     });
   });
 
+  document.querySelectorAll(".video-card[data-artwork-box]").forEach((card) => {
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openDescriptionModal(card);
+      }
+    });
+  });
+
+  document.querySelectorAll(".video-thumb video").forEach((video) => {
+    function seekFirstFrame() {
+      try {
+        if (!video.duration || !isFinite(video.duration)) return;
+        const t = Math.min(0.05, video.duration * 0.001);
+        if (t > 0) video.currentTime = t;
+      } catch (_) {}
+    }
+    video.addEventListener("loadeddata", seekFirstFrame);
+    video.addEventListener("loadedmetadata", seekFirstFrame);
+  });
+
   if (descClose) {
     descClose.addEventListener("click", closeDescriptionModal);
   }
