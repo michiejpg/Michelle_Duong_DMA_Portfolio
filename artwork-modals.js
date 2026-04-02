@@ -67,7 +67,7 @@
     }
 
     descTitle.textContent = title;
-    descBody.textContent = text;
+    descBody.innerHTML = text;
     descActions.innerHTML = "";
 
     const videoSrc = box.getAttribute("data-video-src");
