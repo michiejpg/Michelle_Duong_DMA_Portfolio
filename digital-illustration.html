@@ -32,23 +32,56 @@
 
       <section class="page-content">
         <div class="illustration-gallery">
-          <figure class="illustration-piece">
+          <figure
+            class="illustration-piece"
+            data-artwork-box
+            data-art-title="digital still life"
+            data-art-description=""
+          >
             <img
               src="images/digitalpainting copy.jpg"
               alt="digital painting illustration"
             />
             <figcaption>digital still life</figcaption>
           </figure>
-          <figure class="illustration-piece">
+          <figure
+            class="illustration-piece"
+            data-artwork-box
+            data-art-title="meihua logo"
+            data-art-description=""
+          >
             <img src="images/MEIHUA.JPG" alt="meihua illustration" />
             <figcaption>meihua logo</figcaption>
           </figure>
-          <figure class="illustration-piece">
+          <figure
+            class="illustration-piece"
+            data-artwork-box
+            data-art-title="human error"
+            data-art-description=""
+          >
             <img src="images/Human Error.jpg" alt="human error illustration" />
             <figcaption>human error</figcaption>
           </figure>
         </div>
       </section>
+
+      <div class="description-modal" id="description-modal" aria-hidden="true">
+        <div class="description-modal-inner">
+          <button
+            type="button"
+            class="description-modal-close"
+            aria-label="close description"
+          >
+            ✕
+          </button>
+          <h3 id="description-modal-title"></h3>
+          <p id="description-modal-body"></p>
+          <div
+            id="description-modal-actions"
+            class="description-modal-actions"
+          ></div>
+        </div>
+      </div>
 
       <div class="image-modal" id="image-modal" aria-hidden="true">
         <div class="image-modal-inner">
@@ -67,42 +100,6 @@
     <footer class="site-footer">
       <p>&copy; <span id="year"></span> Michelle Duong · Digital Media Art</p>
     </footer>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      (function () {
-        const modal = document.getElementById("image-modal");
-        const viewer = document.getElementById("image-modal-viewer");
-        const closeBtn = modal.querySelector(".image-modal-close");
-
-        function openModal(src, altText) {
-          viewer.src = src;
-          viewer.alt = altText || "";
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-        }
-
-        function closeModal() {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-          viewer.removeAttribute("src");
-          viewer.alt = "";
-        }
-
-        document.querySelectorAll(".illustration-piece img").forEach((img) => {
-          img.addEventListener("click", () => openModal(img.src, img.alt));
-        });
-
-        closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.classList.contains("is-open")) {
-            closeModal();
-          }
-        });
-      })();
-    </script>
+    <script src="artwork-modals.js" defer></script>
   </body>
 </html>
