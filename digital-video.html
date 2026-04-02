@@ -38,7 +38,7 @@
             aria-label="play running out of time video"
           >
             <div class="video-thumb">
-              <video src="videos/runningoutoftime.mp4" muted></video>
+              <video preload="metadata" playsinline src="videos/runningoutoftime.mp4" muted></video>
             </div>
             <div class="video-label">running out of time</div>
           </button>
@@ -49,7 +49,7 @@
             aria-label="play vanity video"
           >
             <div class="video-thumb">
-              <video src="videos/vanity.mp4" muted></video>
+              <video preload="metadata" playsinline src="videos/vanity.mp4" muted></video>
             </div>
             <div class="video-label">vanity</div>
           </button>
@@ -60,7 +60,7 @@
             aria-label="play visions video"
           >
             <div class="video-thumb">
-              <video src="videos/visions.mp4" muted></video>
+              <video preload="metadata" playsinline src="videos/visions.mp4" muted></video>
             </div>
             <div class="video-label">visions</div>
           </button>
@@ -71,7 +71,7 @@
             aria-label="play creep video"
           >
             <div class="video-thumb">
-              <video src="videos/creep.mp4" muted></video>
+              <video preload="metadata" playsinline src="videos/creep.mp4" muted></video>
             </div>
             <div class="video-label">creep</div>
           </button>
@@ -87,7 +87,7 @@
           >
             ✕
           </button>
-          <video id="video-modal-player" controls></video>
+          <video id="video-modal-player" controls playsinline preload="metadata"></video>
         </div>
       </div>
     </main>
@@ -105,9 +105,11 @@
 
         function openModal(src) {
           player.src = src;
+          player.load();
           modal.classList.add("is-open");
           modal.setAttribute("aria-hidden", "false");
-          player.play();
+          const p = player.play();
+          if (p && typeof p.catch === "function") p.catch(() => {});
         }
 
         function closeModal() {
