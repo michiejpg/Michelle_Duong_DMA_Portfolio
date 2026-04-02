@@ -34,13 +34,18 @@
         <header class="home-section-header">
           <h2 id="heading-coding" class="home-section-title">Coding</h2>
           <p class="home-section-lead">
-            Interactive web projects — click a link to open each piece in a new
-            tab.
+            Click a project for a short description, or use the link to open
+            it in a new tab.
           </p>
         </header>
         <div class="page-content">
           <div class="coding-gallery">
-            <div class="coding-card">
+            <div
+              class="coding-card"
+              data-artwork-box
+              data-art-title="Where's Maya?"
+              data-art-description=""
+            >
               <img src="images/netart copy.jpg" alt="netart project image" />
               <div class="coding-links">
                 <a
@@ -52,7 +57,12 @@
               </div>
             </div>
 
-            <div class="coding-card">
+            <div
+              class="coding-card"
+              data-artwork-box
+              data-art-title="EDM Dress Up"
+              data-art-description=""
+            >
               <img
                 src="images/edmdressup copy.jpg"
                 alt="edm dress up project image"
@@ -67,7 +77,12 @@
               </div>
             </div>
 
-            <div class="coding-card">
+            <div
+              class="coding-card"
+              data-artwork-box
+              data-art-title="SYSTEM // ERROR"
+              data-art-description=""
+            >
               <img src="images/systemerror.png" alt="system error project image" />
               <div class="coding-links">
                 <a
@@ -92,15 +107,20 @@
             Digital Video
           </h2>
           <p class="home-section-lead">
-            Click a piece to play it full size with sound.
+            Click a piece for a description, then use “Play video” to watch it
+            full size with sound.
           </p>
         </header>
         <div class="page-content">
           <div class="video-grid">
             <button
+              type="button"
               class="video-card"
+              data-artwork-box
+              data-art-title="running out of time"
+              data-art-description=""
               data-video-src="videos/runningoutoftime.mp4"
-              aria-label="play running out of time video"
+              aria-label="open details for running out of time"
             >
               <div class="video-thumb">
                 <video preload="metadata" playsinline src="videos/runningoutoftime.mp4" muted></video>
@@ -109,9 +129,13 @@
             </button>
 
             <button
+              type="button"
               class="video-card"
+              data-artwork-box
+              data-art-title="vanity"
+              data-art-description=""
               data-video-src="videos/vanity.mp4"
-              aria-label="play vanity video"
+              aria-label="open details for vanity"
             >
               <div class="video-thumb">
                 <video preload="metadata" playsinline src="videos/vanity.mp4" muted></video>
@@ -120,9 +144,13 @@
             </button>
 
             <button
+              type="button"
               class="video-card"
+              data-artwork-box
+              data-art-title="visions"
+              data-art-description=""
               data-video-src="videos/visions.mp4"
-              aria-label="play visions video"
+              aria-label="open details for visions"
             >
               <div class="video-thumb">
                 <video preload="metadata" playsinline src="videos/visions.mp4" muted></video>
@@ -131,9 +159,13 @@
             </button>
 
             <button
+              type="button"
               class="video-card"
+              data-artwork-box
+              data-art-title="creep"
+              data-art-description=""
               data-video-src="videos/creep.mp4"
-              aria-label="play creep video"
+              aria-label="open details for creep"
             >
               <div class="video-thumb">
                 <video preload="metadata" playsinline src="videos/creep.mp4" muted></video>
@@ -153,22 +185,40 @@
           <h2 id="heading-digital-illustration" class="home-section-title">
             Digital Illustration
           </h2>
-          <p class="home-section-lead">Digital paintings and character work.</p>
+          <p class="home-section-lead">
+            Click a piece for a description; use “View full image” to enlarge
+            it.
+          </p>
         </header>
         <div class="page-content">
           <div class="illustration-gallery">
-            <figure class="illustration-piece">
+            <figure
+              class="illustration-piece"
+              data-artwork-box
+              data-art-title="digital still life"
+              data-art-description=""
+            >
               <img
                 src="images/digitalpainting copy.jpg"
                 alt="digital painting illustration"
               />
               <figcaption>digital still life</figcaption>
             </figure>
-            <figure class="illustration-piece">
+            <figure
+              class="illustration-piece"
+              data-artwork-box
+              data-art-title="meihua logo"
+              data-art-description=""
+            >
               <img src="images/MEIHUA.JPG" alt="meihua illustration" />
               <figcaption>meihua logo</figcaption>
             </figure>
-            <figure class="illustration-piece">
+            <figure
+              class="illustration-piece"
+              data-artwork-box
+              data-art-title="human error"
+              data-art-description=""
+            >
               <img src="images/Human Error.jpg" alt="human error illustration" />
               <figcaption>human error</figcaption>
             </figure>
@@ -192,6 +242,24 @@
           </div>
         </div>
       </section>
+
+      <div class="description-modal" id="description-modal" aria-hidden="true">
+        <div class="description-modal-inner">
+          <button
+            type="button"
+            class="description-modal-close"
+            aria-label="close description"
+          >
+            ✕
+          </button>
+          <h3 id="description-modal-title"></h3>
+          <p id="description-modal-body"></p>
+          <div
+            id="description-modal-actions"
+            class="description-modal-actions"
+          ></div>
+        </div>
+      </div>
 
       <div class="video-modal" id="video-modal" aria-hidden="true">
         <div class="video-modal-inner">
@@ -224,75 +292,6 @@
       <p>&copy; <span id="year"></span> Michelle Duong · Digital Media Art</p>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      (function () {
-        const modal = document.getElementById("video-modal");
-        const player = document.getElementById("video-modal-player");
-        const closeBtn = modal.querySelector(".video-modal-close");
-        const imageModal = document.getElementById("image-modal");
-        const imageViewer = document.getElementById("image-modal-viewer");
-        const imageCloseBtn = imageModal.querySelector(".image-modal-close");
-
-        function openModal(src) {
-          player.src = src;
-          player.load();
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-          const p = player.play();
-          if (p && typeof p.catch === "function") p.catch(() => {});
-        }
-
-        function closeModal() {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-          player.pause();
-          player.currentTime = 0;
-          player.removeAttribute("src");
-        }
-
-        function openImageModal(src, altText) {
-          imageViewer.src = src;
-          imageViewer.alt = altText || "";
-          imageModal.classList.add("is-open");
-          imageModal.setAttribute("aria-hidden", "false");
-        }
-
-        function closeImageModal() {
-          imageModal.classList.remove("is-open");
-          imageModal.setAttribute("aria-hidden", "true");
-          imageViewer.removeAttribute("src");
-          imageViewer.alt = "";
-        }
-
-        document.querySelectorAll(".video-card").forEach((card) => {
-          card.addEventListener("click", () => {
-            const src = card.getAttribute("data-video-src");
-            if (src) openModal(src);
-          });
-        });
-
-        closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
-
-        document.querySelectorAll(".illustration-piece img").forEach((img) => {
-          img.addEventListener("click", () => openImageModal(img.src, img.alt));
-        });
-
-        imageCloseBtn.addEventListener("click", closeImageModal);
-        imageModal.addEventListener("click", (e) => {
-          if (e.target === imageModal) closeImageModal();
-        });
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            if (modal.classList.contains("is-open")) closeModal();
-            if (imageModal.classList.contains("is-open")) closeImageModal();
-          }
-        });
-      })();
-    </script>
+    <script src="artwork-modals.js" defer></script>
   </body>
 </html>
