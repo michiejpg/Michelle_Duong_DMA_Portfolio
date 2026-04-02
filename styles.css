@@ -662,6 +662,12 @@ a {
   white-space: pre-line;
 }
 
+.description-modal-inner p i,
+.description-modal-inner p em {
+  font-style: italic;
+  color: var(--text-main);
+}
+
 .description-modal-close {
   position: absolute;
   top: 0.45rem;
