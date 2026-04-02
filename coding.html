@@ -32,7 +32,12 @@
 
       <section class="page-content">
         <div class="coding-gallery">
-          <div class="coding-card">
+          <div
+            class="coding-card"
+            data-artwork-box
+            data-art-title="Where's Maya?"
+            data-art-description=""
+          >
             <img src="images/netart copy.jpg" alt="netart project image" />
             <div class="coding-links">
               <a
@@ -44,7 +49,12 @@
             </div>
           </div>
 
-          <div class="coding-card">
+          <div
+            class="coding-card"
+            data-artwork-box
+            data-art-title="EDM Dress Up"
+            data-art-description=""
+          >
             <img
               src="images/edmdressup copy.jpg"
               alt="edm dress up project image"
@@ -59,7 +69,12 @@
             </div>
           </div>
 
-          <div class="coding-card">
+          <div
+            class="coding-card"
+            data-artwork-box
+            data-art-title="SYSTEM // ERROR"
+            data-art-description=""
+          >
             <img src="images/systemerror.png" alt="system error project image" />
             <div class="coding-links">
               <a
@@ -72,13 +87,29 @@
           </div>
         </div>
       </section>
+
+      <div class="description-modal" id="description-modal" aria-hidden="true">
+        <div class="description-modal-inner">
+          <button
+            type="button"
+            class="description-modal-close"
+            aria-label="close description"
+          >
+            ✕
+          </button>
+          <h3 id="description-modal-title"></h3>
+          <p id="description-modal-body"></p>
+          <div
+            id="description-modal-actions"
+            class="description-modal-actions"
+          ></div>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
       <p>&copy; <span id="year"></span> Michelle Duong · Digital Media Art</p>
     </footer>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="artwork-modals.js" defer></script>
   </body>
 </html>
