@@ -212,17 +212,27 @@ a {
   align-items: start;
 }
 
+.about-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: min(100%, 42rem);
+  min-width: 0;
+}
+
 .about-photo {
   margin: 0;
-  border-radius: var(--card-radius);
+  border-radius: 16px;
   overflow: hidden;
   border: 2px dashed rgba(255, 230, 190, 0.9);
-  box-shadow: 0 8px 20px rgba(150, 170, 210, 0.2);
+  box-shadow: 0 6px 14px rgba(150, 170, 210, 0.18);
 }
 
 .about-photo img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   display: block;
   vertical-align: middle;
 }
